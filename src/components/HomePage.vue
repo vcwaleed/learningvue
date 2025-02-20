@@ -1,19 +1,17 @@
 <template>
-<h1> 
+<h1>
     <span> this is my home component</span>
 </h1>
 </template>
 
 <script>
-
 export default {
-    name:'HomePage'
-   
+    name: 'HomePage'
 }
 </script>
 
 <style scoped>
-h1{
-    color:red
+h1 {
+    color: red
 }
 </style>
