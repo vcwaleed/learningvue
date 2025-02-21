@@ -1,12 +1,22 @@
 <template>
+<ValidationForm/>
+<FormPage/>
+<br/>
+<br/>
+
+<RefPage/>
+    <h1>Data from child compoent </h1>
+    <h2>{{ childdata }}</h2>
+
 <HelloWorld msg="Welcome to learn " />
 <HomePage/>
 <PlayPage message="Waleed do Your Work "/>
 <InputPage/>
 <CheckBox/>
 <LoopList/>
-<ChidPage  :user="user" :getdata="getdata"/>
+<ChidPage  :user="user" :getdata="getdata" :username=" getusername"/>
 <BindingPage/>
+<BindingClasses/>
 </template>
 
 <script>
@@ -18,6 +28,10 @@ import CheckBox from './components/CheckBox.vue'
 import LoopList from './components/LoopList.vue'
 import ChidPage from './components/ChidPage.vue'
 import BindingPage from './components/BindingPage.vue'
+import BindingClasses from './components/BindingClasses.vue'
+import RefPage from './components/RefPage.vue'
+import FormPage from'./components/FormPage.vue'
+import ValidationForm from './components/ValidationForm.vue'
 
 
 export default {
@@ -30,17 +44,26 @@ export default {
         CheckBox,
         LoopList,
         ChidPage,
-        BindingPage
+        BindingPage,
+        BindingClasses,
+        RefPage,
+        FormPage,
+        ValidationForm
 
     },
     data(){
         return{
-            user:[{name:"talha", email:"talhawaleed@gmail.com"}]
+            user:[{name:"talha", email:"talhawaleed@gmail.com"}],
+            childdata:"",
+
         }
     },
     methods: {
         getdata(){
             console.log("From main function bro ")
+        },
+        getusername(name){
+            this.childdata=name;
         }
     },
 
